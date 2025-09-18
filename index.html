@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+      <title>UE Handbook</title>
+   </head>
+   <body>
+      <main class="container">
+         <section>
+            <h2>Возможности взаимодействия с редактором</h2>
+            <p>Ctrl + Tab — переключение между вкладками</p>
+            <h3>Взаимодействие с вкладками</h3>
+            <p>СКП по владке — закрыть эту вкладку (удобнее, чем наводиться на кристик)</p>
+            <p>ПКМ по вкладке → Close other tabs — закрыть все остальные вкладки (кроме главной)</p>
+            <hr />
+            <p>Ctrl + Space — открыть кладку "Content Browser" (Даже если она уже закреплена в интерфейсе)</p>
+            <p>Чтобы закрепить "Content Browser" нужно в нём нажать "Dock in Layout"</p>
+            <p>Ctrl + Shift + S — сохранить всё</p>
+            <p>ЛКМ на объект (и в сцене в outliner) F — сфокусироваться на выбранном объекте, т.е. приблизить камеру к данному объекту</p>
+            <p>Alt + Колёсико мыши — пошаговое сближение и отдоление от объекта</p>
+            <p>Alt + ЛКМ + Движение мыши — вращать камеру вокруг выбранного объекта</p>
+            <p>Alt + ПКМ + Движение мыши — плавное сближение и отдоление камеры от выбранного объекта</p>
+            <p>команда stat fps в консоле включает fps</p>
+            <p>Ctrl + Цифра — сохранить текущее положение камеры на сцене. Последующие нажатия на выбранную цифру будет перемещать камеру в сохранённую позицию</p>
+            <p>Q — режим выбора объектов</p>
+            <p>W — режим перемещения объекта</p>
+            <p>E — режим вращения объекта</p>
+            <p>R — режим масштабирования объекта</p>
+            <p>СКП по пивоту — перемещение пивота (пивот сбрасывает изменение после переключения на другой объект</p>
+         </section>
+         <section>
+            <h2>Объявление переменных</h2>
+            <h3>Типы данных</h3>
+            <p>Для объявления переменной (variable declaration) нужно указать тип данных этой переменной, а затем, через пробел, название переменной.</p>
+            <p>В UE существуют следующие типы данных:</p>
+            <ul>
+               <li><span class="bold">bool</span> — булевый тип данных. К переменным данного типа следует добавлять префикс "b", а также их следует начинать с "Is" либо "has"</li>
+               <li>
+                  Далее, целочисленный тип данных — пишется ключевое слово "int" и сразу после него число, указывающее количество бит. Есть 8,16,32,64. А также есть беззнаковый целочисленный тип, пишется также но с приставкой "u":
+                  <ul>
+                     <li><span class="bold">int8</span></li>
+                     <li><span class="bold">uint8</span></li>
+                     <li><span class="bold">int16</span></li>
+                     <li><span class="bold">uint16</span></li>
+                     <li><span class="bold">int32</span></li>
+                     <li><span class="bold">uint32</span></li>
+                     <li><span class="bold">int64</span></li>
+                     <li><span class="bold">uint64</span></li>
+                  </ul>
+               </li>
+               <li>
+                  <span class="bold">float</span> — вещественный тип данных. Литералы для этого типа лучше записывать с модификтором "f" на конце, т.к. в коде вещественные литералы без данного модификатора воспринимаются как тип double. Если не поставить
+                  модификатор, то будет автоматическое приведение типов
+               </li>
+               <li><span class="bold">double</span> — тоже вещественный тип данных, но с двойной точностью</li>
+               <li>
+                  <span class="bold">FString</span> — Строковый тип данных (но технически — структурный). Используется для различных служебных сообщений, например для ошибок или предупреждений. Т.е. это та информация, которая не коснётся игрока. Например
+                  используется для вывода сообщений с логи, или при указании названия файла, в которой будет сохраняться игра
+               </li>
+               <li><span class="bold">FName</span> — Данный тип тоже является служебным, но используется для наименования каких-то элементов</li>
+               <li>
+                  <span class="bold">FText</span> — Этот тип чуть сложнее, т.к. не имеет конструктора, но есть статическая функция, которая называется "FromString", который преобразует тип FString в FText. Также есть аналогичная ф-ция — "FName". Данный
+                  тип данных имеет механизм локализации, поэтому для любого текста, который выводится для игрока лучше использовать тип FText
+               </li>
+               <li><span class="bold">FVector</span> — Тоже структурный тип данных и имеет несколько вариантов конструктора, но самый базовый — это точки XYZ типа double</li>
+            </ul>
+            <p>Однако на практике, в подавляющем большинстве случаев, используются только следующие типы данных:</p>
+            <ul>
+               <li>bool</li>
+               <li>uint8 (для нумерации ENum)</li>
+               <li>int32</li>
+               <li>float</li>
+            </ul>
+            <p>Ниже примеры объявлений переменных со всеми типами данных</p>
+            <div class="codeboard">
+               <div class="UI">
+                  <button class="btn-copy">
+                     <i class="fa-solid fa-copy"></i>
+                  </button>
+                  <button class="btn-settings">
+                     <i class="fa-solid fa-gear"></i>
+                  </button>
+               </div>
+               <div class="codeboard-content">
+                  <div class="codeboard-gutter">
+                     1<br />
+                     2<br />
+                     3<br />
+                     4<br />
+                     5<br />
+                     6<br />
+                     7<br />
+                     8<br />
+                     9<br />
+                     10<br />
+                     11<br />
+                     12<br />
+                     13<br />
+                     14<br />
+                     15<br />
+                     16<br />
+                     17<br />
+                     18<br />
+                     19<br />
+                     20<br />
+                     21<br />
+                     22<br />
+                     23<br />
+                     24<br />
+                     25<br />
+                  </div>
+                  <div class="codeboard-body">
+                     <span class="base-type">bool</span> <span class="variable-name">bIsVisible</span> = <span class="bool-literal">true</span>; <span class="comment">// Булевский тип данных</span><br />
+                     <br />
+                     <span class="comment">// Целочисленные типы дынных</span><br />
+                     <span class="object-type">int8</span> <span class="variable-name">VarName_1</span> = <span class="numeric-literal">-12</span>; <span class="comment">// [-127 ; 128] (1 байт)</span><br />
+                     <span class="object-type">uint8</span> <span class="variable-name">VarName_2</span> = <span class="numeric-literal">12</span>; <span class="comment">// [0 ; 255] (1 байт)</span><br />
+                     <span class="object-type">int16</span> <span class="variable-name">VarName_3</span> = <span class="numeric-literal">-12</span>; <span class="comment">// [-32 768 ; 32 767] (2 байтa)</span><br />
+                     <span class="object-type">uint16</span> <span class="variable-name">VarName_4</span> = <span class="numeric-literal">12</span>; <span class="comment">// [0 ; 65 535] (2 байтa)</span><br />
+                     <span class="object-type">int32</span> <span class="variable-name">VarName_5</span> = <span class="numeric-literal">-12</span>; <span class="comment">// [-2 147 483 648 ; 2 147 483 647] (4 байтa)</span><br />
+                     <span class="object-type">uint32</span> <span class="variable-name">VarName_6</span> = <span class="numeric-literal">12</span>; <span class="comment">// [0 ; 4 294 967 295] (4 байтa)</span><br />
+                     <span class="object-type">int64</span> <span class="variable-name">VarName_7</span> = <span class="numeric-literal">-12</span>; <span class="comment">// [-9 223 372 036 854 775 808 ; +9 223 372 036 854 775 807] (8 байтa)</span><br />
+                     <span class="object-type">uint64</span> <span class="variable-name">VarName_8</span> = <span class="numeric-literal">12</span>; <span class="comment">// [0 ; 18 446 744 073 709 551 615] (8 байтa)</span><br />
+                     <br />
+                     <span class="comment">// Вещественные типы данных</span><br />
+                     <span class="base-type">float</span> <span class="variable-name">Damage_1</span> = <span class="numeric-literal">0.5f</span>;<br />
+                     <span class="base-type">double</span> <span class="variable-name">Damage_2</span> = <span class="numeric-literal">2.23456</span>;<br />
+                     <br />
+                     <span class="comment">// Строковые типы данных (объектные)</span><br />
+                     <span class="object-type">FString</span> <span class="variable-name">ErrorName</span>(TEXT(<span class="string-literal">"Important Error!"</span>));<br />
+                     <span class="object-type">FName</span> <span class="variable-name">BoneName</span>(TEXT(<span class="string-literal">"Pelvis"</span>));<br />
+                     <span class="object-type">FText</span> <span class="variable-name">Description</span> = <span class="object-type">FText</span>::<span class="B">FromString</span>(TEXT(<span class="string-literal">"Food"</span>));<br />
+                     <br />
+                     <span class="comment">// Компонентные типы данных (объектные)</span><br />
+                     <span class="object-type">FVector</span> <span class="variable-name">Loaction</span>(<span class="numeric-literal">0.0</span>, <span class="numeric-literal">0.0</span>, <span class="numeric-literal">0.0</span>);<br />
+                     <span class="object-type">FRotator</span> <span class="variable-name">Rototion</span>(TEXT(<span class="string-literal">"Pelvis"</span>));<br />
+                     <span class="object-type">FName</span> <span class="variable-name">BoneName</span>(TEXT(<span class="string-literal">"Pelvis"</span>));<br />
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section>
+            <h2>Вывод текста</h2>
+            <h3>Вывод на экран</h3>
+            <div class="codeboard">
+               <div class="UI">
+                  <button class="btn-copy">
+                     <i class="fa-solid fa-copy"></i>
+                  </button>
+                  <button class="btn-settings">
+                     <i class="fa-solid fa-gear"></i>
+                  </button>
+               </div>
+               <div class="codeboard-content">
+                  <div class="codeboard-gutter">•<br /></div>
+                  <div class="codeboard-body">
+                     <span class="function-declaration">GEngine</span>-><span class="B">AddOnScreenDebugMessage</span>(<span class="constant">INDEX_NONE</span>, <span class="numeric-literal">2.0f</span>, <span class="object-type">FColor</span>::Green,
+                     TEXT(<span class="string-literal">"Hello world"</span>));
+                  </div>
+               </div>
+            </div>
+            <p>Где:</p>
+            <ul>
+               <li>
+                  <span class="inline-codeboard"><span class="constant">INDEX_NONE</span></span>
+                  — константа, равная -1
+               </li>
+               <li>2.0f — время существования надписи</li>
+               <li>FColor::Green — цвет текста</li>
+               <li>TEXT("Text") — само сообщение</li>
+            </ul>
+            <p>Чтобы вывести не просто текст</p>
+         </section>
+      </main>
+   </body>
+</html>

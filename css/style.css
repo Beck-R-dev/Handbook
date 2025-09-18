@@ -1,0 +1,22 @@
+@import "codeboard.css";
+
+* {
+   /* margin: 0; */
+   /* padding: 0; */
+   box-sizing: border-box;
+   caret-color: transparent;
+}
+body {
+   background: #eee;
+   font: 18px sans-serif;
+}
+.container {
+   background: #fff;
+   box-shadow: 0 1px 10px rgba(0 0 0 / 30%);
+   margin: 0 auto;
+   padding: 15px;
+   max-width: 1120px;
+}
+.bold {
+   font-weight: bold;
+}

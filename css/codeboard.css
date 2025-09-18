@@ -1,0 +1,93 @@
+.codeboard {
+   background: #232323;
+   border-radius: 0.5rem;
+   box-shadow: 0 2px 10px 0 rgba(0 0 0 / 18%);
+   color: #fdfdfd;
+   cursor: default;
+   font-family: "Cascadia Mono";
+   margin-top: 24px;
+   padding: 20px;
+   position: relative;
+}
+.codeboard::-moz-selection {
+  background: rgba(255 255 255 / 16%);
+  color: inherit;
+}
+.codeboard::selection {
+  background: rgba(255 255 255 / 16%);
+  color: inherit;
+}
+.codeboard::before {
+   background: #232323;
+   border: 2px solid #335de7;
+   border-radius: 0.6rem;
+   content: "C++";
+   position: absolute;
+   display: inline-block;
+   padding: 0 6px;
+   top: -18px;
+   left: 15px;
+}
+.codeboard .UI {
+   position: absolute;
+   top: 11px;
+   right: 11px;
+}
+.codeboard [class^="btn"] {
+   background: rgba(255 255 255 / 8%);
+   border: none;
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px 12px;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 1rem;
+   color: rgba(255 255 255 / 80%);
+   -webkit-transition: background 0.12s;
+   -moz-transition: background 0.12s;
+   transition: background 0.12s;
+}
+.codeboard [class^="btn"]:hover {
+   background: rgba(255 255 255 / 20%);
+}
+.codeboard [class^="btn"] i {
+   font-size: 1.2rem;
+}
+.codeboard-gutter {
+   text-align: center;
+}
+.inline-codeboard {
+   background: #232323;
+   border-radius: 0.32rem;
+   color: #fdfdfd;
+   font-family: "Cascadia Mono";
+   font-size: 0.86rem;
+   padding: 4px;
+}
+.codeboard-content {
+   display: flex;
+}
+.codeboard-gutter {
+   border-right: 2px solid rgba(255 255 255 / 8%);
+   color: rgba(255 255 255 / 30%);
+   padding: 0 10px 0 0;
+}
+.codeboard-body {
+   padding-left: 10px;
+}
+/* Comments */
+.codeboard .comment, .inline-codeboard .comment { color: #40bb6d; }
+
+/* Literals Color */
+.codeboard .bool-literal, .inline-codeboard .bool-literal { color: #6ca0ff; }
+.codeboard .numeric-literal, .inline-codeboard .numeric-literal { color: #dcfcd6;}
+.codeboard .string-literal, .inline-codeboard .string-literal { color: #ffb86c;}
+
+/* Data type Colors */
+.codeboard .base-type, .inline-codeboard .base-type { color: #6ca0ff; }
+.codeboard .B, .inline-codeboard .B { color: #fce893; }
+.codeboard .variable-name, .inline-codeboard .variable-name { color: #89cff0; }
+.codeboard .object-type, .inline-codeboard .object-type { color: #9fe6a8; }
+.codeboard .constant, .inline-codeboard .constant { color: #cba6f7; }
+.codeboard .function-declaration, .inline-codeboard .function-declaration { color: #89cff0; }

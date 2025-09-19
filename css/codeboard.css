@@ -62,7 +62,7 @@
    border-radius: 0.32rem;
    color: #fdfdfd;
    font-family: "Cascadia Mono";
-   font-size: 0.86rem;
+   font-size: 1rem;
    padding: 4px;
 }
 .codeboard-content {
@@ -75,6 +75,7 @@
 }
 .codeboard-body {
    padding-left: 10px;
+   white-space: nowrap;
 }
 .codeboard .block {
    position: relative;

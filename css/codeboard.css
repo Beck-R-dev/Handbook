@@ -21,7 +21,7 @@
    background: #232323;
    border: 2px solid #335de7;
    border-radius: 0.6rem;
-   content: "C++";
+   content: "C#";
    position: absolute;
    display: inline-block;
    padding: 0 6px;
@@ -75,6 +75,33 @@
 }
 .codeboard-body {
    padding-left: 10px;
+}
+.codeboard .block {
+   position: relative;
+}
+.codeboard .tabbed-block {
+   margin-left: 32px;
+   position: relative;
+}
+.codeboard .block::before,
+.codeboard .tabbed-block::before {
+   content: "";
+   display: block;
+   width: 0;
+   position: absolute;
+   top: 22px;
+   bottom: 22px;
+   
+   border-left: 1px dashed rgba(255, 255, 255, .3);
+}
+.codeboard .tabbed1 { padding-left: 32px; }
+.codeboard .tabbed2 { padding-left: 64px; }
+.codeboard .tabbed3 { padding-left: 96px; }
+.codeboard .tabbed4 { padding-left: 128px; }
+.codeboard .tabbed5 { padding-left: 160px; }
+.codeboard .tabbed6 { padding-left: 192px; }
+.codeboard .transparent {
+   opacity: .64;
 }
 /* Comments */
 .codeboard .comment, .inline-codeboard .comment { color: #40bb6d; }

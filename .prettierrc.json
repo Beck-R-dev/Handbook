@@ -1,11 +1,11 @@
 {
-	"tabWidth": 3,
-	"htmlSelfClosingTags": true,
-	"semi": true,
-	"singleQuote": false,
-	"trailingComma": "es5",
-	"printWidth": 254,
-	"singleAttributePerLine": false,
-	"cssEnable": true,
-	"proseWrap": "never"
+   "tabWidth": 3,
+   "htmlSelfClosingTags": true,
+   "semi": true,
+   "singleQuote": false,
+   "trailingComma": "es5",
+   "printWidth": 254,
+   "singleAttributePerLine": false,
+   "cssEnable": true,
+   "proseWrap": "never"
 }

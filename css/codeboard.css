@@ -95,14 +95,15 @@
    
    border-left: 1px dashed rgba(255, 255, 255, .3);
 }
-.codeboard .tabbed1 { padding-left: 32px; }
-.codeboard .tabbed2 { padding-left: 64px; }
-.codeboard .tabbed3 { padding-left: 96px; }
-.codeboard .tabbed4 { padding-left: 128px; }
-.codeboard .tabbed5 { padding-left: 160px; }
-.codeboard .tabbed6 { padding-left: 192px; }
 .codeboard .transparent {
    opacity: .64;
+}
+.codeboard .wavy-underline {
+  -webkit-text-decoration-line: underline;
+
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #d40606;
 }
 /* Comments */
 .codeboard .comment, .inline-codeboard .comment { color: #40bb6d; }

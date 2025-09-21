@@ -6,6 +6,7 @@
    cursor: default;
    font-family: "Cascadia Mono";
    margin-top: 24px;
+   overflow: auto;
    padding: 20px;
    position: relative;
 }
@@ -16,17 +17,6 @@
 .codeboard::selection {
   background: rgba(255 255 255 / 16%);
   color: inherit;
-}
-.codeboard::before {
-   background: #232323;
-   border: 2px solid #335de7;
-   border-radius: 0.6rem;
-   content: "C#";
-   position: absolute;
-   display: inline-block;
-   padding: 0 6px;
-   top: -18px;
-   left: 15px;
 }
 .codeboard .UI {
    position: absolute;
@@ -63,7 +53,7 @@
    color: #fdfdfd;
    font-family: "Cascadia Mono";
    font-size: 1rem;
-   padding: 4px;
+   padding: 2px 4px;
 }
 .codeboard-content {
    display: flex;
@@ -112,6 +102,8 @@
 .codeboard .bool-literal, .inline-codeboard .bool-literal { color: #6ca0ff; }
 .codeboard .numeric-literal, .inline-codeboard .numeric-literal { color: #dcfcd6;}
 .codeboard .string-literal, .inline-codeboard .string-literal { color: #ffb86c;}
+
+.codeboard .C, .inline-codeboard .C {color: #ffe46c;}
 
 /* Data type Colors */
 .codeboard .base-type, .inline-codeboard .base-type { color: #6ca0ff; }

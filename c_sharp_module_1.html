@@ -9,9 +9,9 @@
 
       <title>Handbook | Блок 1</title>
    </head>
-    <body>
+   <body>
       <div class="page">
-            <!--
+         <!--
             <aside class="aside-panel">
                 <nav class="aside-menu">
                     <ul>
@@ -21,7 +21,7 @@
                 </nav>
             </aside>
             -->
-        <main class="container">
+         <main class="container">
             <h1 class="text-center">Курс по C# для Game-разработки</h1>
             <div class="meta-info">
                <span class="author">Автор: Расулов Бекзод</span><br />
@@ -32,8 +32,8 @@
             <section>
                <h3>Вывод текста</h3>
                <p>
-                  Для того, чтобы вывести какой-либо текст на консоль, нужно использовать команду (statement)
-                  <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">WriteLine</span>()</code>, и внутри скобок в кавычках написать текст, который нужно вывести:
+                  Для того, чтобы вывести какой-либо текст на консоль, нужно использовать команду <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">Write</span>()</code>, и внутри скобок в кавычках написать текст,
+                  который нужно вывести:
                </p>
                <div class="codeboard">
                   <div class="UI">
@@ -61,13 +61,13 @@
                      <div class="codeboard-body">
                         <span class="base-type">using</span> System;<br />
                         <br />
-                        <div class="block">
+                        <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
+                           <div class="block tabbed indent-guides">
                               <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
+                              <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block"><span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!"</span>);<br /></div>
+                                 <div class="block tabbed"><span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Hello world!"</span>);<br /></div>
                                  }<br />
                               </div>
                               }<br />
@@ -80,12 +80,79 @@
                <p>В данном примере на консоль выведится текст "Hello World!":</p>
                <div class="consoleboard">
                   Hello world!<br />
-                  <br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
-               <p>Что касается оставшихся надписей в консоле, то это просто информация о том, что за файл был запущен, номер процесса, код ны выходе и просто текст "Нажмите на любую клавишу чтобы закрыть это окно". Единственное уточню, что вместое *path* будет полный путь до папки проекта, а вместо *number* будет какое-то число. На данным этапе, вам не нужно обращать на это внимание. Просто знайте, что это стандартная информация, которая выводится в конце выполнения вашей программы.</p>
-               <p>Чтобы вывести текст и на следующей строке, достаточно повторно использовать данную команду:</p>
+               <p>
+                  Конечно же, вы можете вместо "Hello world" выводить любой текст, состоящий из латинских символов. А что касается оставшихся надписей в консоли, то это просто информация о том, какой файл был запущен, номер процесса, код завершения и
+                  просто текст "Нажмите на любую клавишу, чтобы закрыть это окно". Однако уточню, что вместо *path* будет полный путь до папки проекта, а вместо *number* — какое-то число. На данном этапе вам не нужно обращать на это внимание. Просто
+                  знайте, что это стандартная информация, выводимая в конце выполнения вашей программы.
+               </p>
+               <p>
+                  Выводить текст мы научились, но что, если нам нужно вывести ещё текст на следующей строке? Можно подумать, что для этого достаточно написать команду
+                  <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">Write</span>()</code> ещё раз. Однако, это сработает не так, как мы ожидаем:
+               </p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Line 1"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Line 2"</span>);
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  Line 1Line 2<br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>То есть сам-то текст вывелся, но не на следующей строке, а сразу после предыдущего вывода. И всё же, как нам вывести текст на следующей строке? Для этого существуют управляющие последовательности. Подробнее о них — дальше.</p>
+            </section>
+            <section>
+               <h3>Управляющие последовательности</h3>
+               <p>
+                  Сочетания символов, состоящие из обратной косой черты (<code class="inline-codeboard"><span class="C">\</span></code
+                  >), за которой следует символ или сочетание цифр, называются управляющими последовательности (или escape-последовательностями), их также можно назвать управляющими символами. Они используются для указания определённых действий и
+                  применяются в тексте. Например, <code class="inline-codeboard"><span class="C">\n</span></code> указывает на то, что нужно сделать перенос строки:
+               </p>
                <div class="codeboard">
                   <div class="UI">
                      <!--
@@ -112,15 +179,14 @@
                      <div class="codeboard-body">
                         <span class="base-type">using</span> System;<br />
                         <br />
-                        <div class="block">
+                        <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
+                           <div class="block tabbed indent-guides">
                               <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
+                              <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!"</span>);<br />
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"This is a second line!"</span>);<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Line 1<span class="C">\n</span>Line 2"</span>);<br />
                                  </div>
                                  }<br />
                               </div>
@@ -133,13 +199,19 @@
                </div>
                <p>Результат:</p>
                <div class="consoleboard">
-                  Hello world!<br />
-                  This is a second line!<br />
-                  <br />
+                  Line 1<br />
+                  Line 2<br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
-               <p>Ну и, соответственно, если вам нужно еще раз вывести текст на следующей строке, то пишите еще раз команду <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">WriteLine</span>()</code>:</p>
+               <p>
+                  Вот таким образом мы смогли реализовать перенос строки. Думаю чтоит отметить, что перенос строки происходит ровно там, где находится <code class="inline-codeboard"><span class="C">\n</span></code
+                  >. В нашем случае — между текстом "Line 1" и "Line 2".
+               </p>
+               <p>
+                  Далее мы пройдём управляющий символ <code class="inline-codeboard"><span class="C">\t</span></code
+                  >, который указывает на то, что нужно сделать табуляцию (выравнивание). Вот например:
+               </p>
                <div class="codeboard">
                   <div class="UI">
                      <!--
@@ -163,20 +235,23 @@
                         8<br />
                         9<br />
                         10<br />
+                        11<br />
+                        12
                      </div>
                      <div class="codeboard-body">
                         <span class="base-type">using</span> System;<br />
                         <br />
-                        <div class="block">
+                        <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
+                           <div class="block tabbed indent-guides">
                               <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
+                              <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!"</span>);<br />
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"This is a second line!"</span>);<br />
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Third line is here!"</span>);<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"These are tabulated lines:<span class="C">\n</span>"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"<span class="C">\t</span>Line 1<span class="C">\n</span>"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"<span class="C">\t</span>Line 2<span class="C">\n</span>"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"<span class="C">\t</span>Line 3<span class="C">\n</span>"</span>);<br />
                                  </div>
                                  }<br />
                               </div>
@@ -189,16 +264,88 @@
                </div>
                <p>Результат:</p>
                <div class="consoleboard">
-                  Hello world!<br />
-                  This is a second line!<br />
-                  Third line is here!<br />
+                  These are tabulated lines:<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 1<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 2<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 3<br />
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>Как видите, перед каждым словом "Line" есть отступы, которые выравнивают текст в колонку, а в конце каждой строки — перенос. То есть всё именно так, как мы указали в коде.</p>
+               <p>
+                  У вас может возникнуть вопрос, а почему табуляция занимает ровно 8 символов? На самом деле некорректно говорить "табуляция занимает ровно 8 символов". Символ табуляции (<code class="inline-codeboard"><span class="C">\t</span></code
+                  >) не добавляет фиксированный отступ, а <span class="bold">переносит каретку к следующей позиции табуляции</span>. В консоли такие позиции обычно расположены через каждые 8 символов, отсюда и выходит отступ в 8 символов. Чтобы
+                  продемонстрировать, что это именно выравнивание, а не фиксированный отступ, давайте напишем такой код:
+               </p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10<br />
+                        11
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"<span class="C">\t</span>Line 1<span class="C">\n</span>"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Test<span class="C">\t</span>Line 2<span class="C">\n</span>"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"Another test<span class="C">\t</span>Line 2<span class="C">\n</span>"</span>);<br />
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 1<br />
+                  test&nbsp;&nbsp;&nbsp;&nbsp;Line 2<br />
+                  Another test&nbsp;&nbsp;&nbsp;&nbsp;Line 3<br />
                   <br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
                <p>
-                  Обращаю внимание!<br />Хочу обратить ваше внимание на то, что текст в консоле вывелся на другой строке не из-за того, что в коде мы написали команду на другой строке, а именно из-за того, что мы саму команду написали еще раз. Другими словами, даже если написать две команды в одну строку,
-                  то результат не изменится:
+                  Как видите, на первой строке отступ составляет 8 символов, т.к. ближайшая табуляция находится в 8 символах от начала, на второй строке — 4 символа, т.к. слово "test" занимает 4 символа и до ближайшей табуляции остаётся 4 символа, а на
+                  третьей строке отступ тоже занимает 4 символа, но уже на другой табуляции, т.к. текст "Another test" занимает 12 символов.
+               </p>
+               <p>
+                  Думаю, на этом примере стало понятно, как именно работает выравнивание по табуляциям с помощью управляющего символа <code class="inline-codeboard"><span class="C">\t</span></code
+                  >.
+               </p>
+               <p>
+                  И последний управляющий символ в этом блоке — это <code class="inline-codeboard"><span class="C">\"</span></code
+                  >, который указывает на то, что нужно вывести кавычки. Например:
                </p>
                <div class="codeboard">
                   <div class="UI">
@@ -226,232 +373,14 @@
                      <div class="codeboard-body">
                         <span class="base-type">using</span> System;<br />
                         <br />
-                        <div class="block">
+                        <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
+                           <div class="block tabbed indent-guides">
                               <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
+                              <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!"</span>);<span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span
-                                       class="string-literal"
-                                       >"This is a second line!"</span
-                                    >);<br />
-                                 </div>
-                                 }<br />
-                              </div>
-                              }<br />
-                           </div>
-                           }<br />
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <p>Результат:</p>
-               <div class="consoleboard">
-                  Hello world!<br />
-                  This is a second line!<br />
-                  <br />
-                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
-                  Press any key to close this window . . .
-               </div>
-               <p>Однако писать код таким образом не следует, как минимум потому, что такой код менее читаемый.</p>
-               <p>Важный момент! Вы можете подумать, что для вывода текста на другой строке, можно сделать перенос прям в коде, однако, <span class="bold">это не так!</span> Нельзя в коде делать перенос посреди текста. Например, если вы попробуйте написать так:</p>
-               <div class="codeboard">
-                  <div class="UI">
-                     <!--
-                     <button class="btn-copy">
-                        <i class="fa-solid fa-copy"></i>
-                     </button>
-                     <button class="btn-settings">
-                        <i class="fa-solid fa-gear"></i>
-                     </button>
-                     -->
-                  </div>
-                  <div class="codeboard-content">
-                     <div class="codeboard-gutter">
-                        1<br />
-                        2<br />
-                        3<br />
-                        4<br />
-                        5<br />
-                        6<br />
-                        7<br />
-                        8<br />
-                        9<br />
-                     </div>
-                     <div class="codeboard-body">
-                        <span class="base-type">using</span> System;<br />
-                        <br />
-                        <div class="block">
-                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
-                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
-                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!<span class="wavy-underline">&nbsp;</span><br />This is second line!"</span>);
-                                       </span><br />
-                                 </div>
-                                 }<br />
-                              </div>
-                              }<br />
-                           </div>
-                           }<br />
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <p>то такой код при компиляции выдаст ошибку. Даже до компеляции видно, что редактор подчёркивает красной волнистой линией тот участок, где был совершён неправильный перенос. Поэтому так делать не следует.</p>
-               <p>А что, если нам в консоле всё-таки нужно сделать перенос текста на следующую строку не используя повторно команду <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">WriteLine</span>()</code>? Для этого существуют управляющие последовательности. О них дальше.</p>
-            </section>
-            <section>
-               <h3>Управляющие последовательности (escape sequences)</h3>
-               <p>Сочетания символов, состоящие из обратной косой черты (\), за которой следует символ или сочетание цифр, называются управляющими последовательности (или escape-последовательностями), их также можно назвать управляющими символами. Они используются для указания определённых действий и применяются в тексте. Например, <code class="inline-codeboard"><span class="C">\n</span></code> указывает на то, что нужно сделать перенос строки:</p>
-               <div class="codeboard">
-                  <div class="UI">
-                     <!--
-                     <button class="btn-copy">
-                        <i class="fa-solid fa-copy"></i>
-                     </button>
-                     <button class="btn-settings">
-                        <i class="fa-solid fa-gear"></i>
-                     </button>
-                     -->
-                  </div>
-                  <div class="codeboard-content">
-                     <div class="codeboard-gutter">
-                        1<br />
-                        2<br />
-                        3<br />
-                        4<br />
-                        5<br />
-                        6<br />
-                        7<br />
-                        8<br />
-                        9<br />
-                     </div>
-                     <div class="codeboard-body">
-                        <span class="base-type">using</span> System;<br />
-                        <br />
-                        <div class="block">
-                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
-                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
-                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Line 1<span class="C">\n</span>Line2"</span>);
-                                       </span><br />
-                                 </div>
-                                 }<br />
-                              </div>
-                              }<br />
-                           </div>
-                           }<br />
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <p>Результат:</p>
-               <div class="consoleboard">
-                  Line 1<br />
-                  Line 2<br />
-                  <br />
-                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
-                  Press any key to close this window . . .
-               </div>
-               <p>Благодаря этому управляющему символу мы можем реализовать перенос текста на следующую строку не иcпользуя повторно команду <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">WriteLine</span>()</code>.</p>
-               <p>Кроме того, есть управляющий символ, указывающий на то, что нужно сделать табуляцию (tabulation), иначе говоря — отступ. Он пишется так: <code class="inline-codeboard"><span class="C">\t</span></code>. Вот например:</p>
-               <div class="codeboard">
-                  <div class="UI">
-                     <!--
-                     <button class="btn-copy">
-                        <i class="fa-solid fa-copy"></i>
-                     </button>
-                     <button class="btn-settings">
-                        <i class="fa-solid fa-gear"></i>
-                     </button>
-                     -->
-                  </div>
-                  <div class="codeboard-content">
-                     <div class="codeboard-gutter">
-                        1<br />
-                        2<br />
-                        3<br />
-                        4<br />
-                        5<br />
-                        6<br />
-                        7<br />
-                        8<br />
-                        9<br />
-                     </div>
-                     <div class="codeboard-body">
-                        <span class="base-type">using</span> System;<br />
-                        <br />
-                        <div class="block">
-                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
-                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
-                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Line 1<span class="C">\n\t</span>Line2"</span>);
-                                       </span><br />
-                                 </div>
-                                 }<br />
-                              </div>
-                              }<br />
-                           </div>
-                           }<br />
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <p>В данном примере, сразу после управляющего символа переноса строки мы добавили управляющий символ табуляции, и, соответственно, всё ровно так и произошло:</p>
-               <div class="consoleboard">
-                  Line 1<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 2<br />
-                  <br />
-                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
-                  Press any key to close this window . . .
-               </div>
-               <p>И последняя escape-последовательность на этом уроке — это <code class="inline-codeboard"><span class="C">\"</span></code>, которая используется для того, чтобы вывести кавычки. Например:</p>
-               <div class="codeboard">
-                  <div class="UI">
-                     <!--
-                     <button class="btn-copy">
-                        <i class="fa-solid fa-copy"></i>
-                     </button>
-                     <button class="btn-settings">
-                        <i class="fa-solid fa-gear"></i>
-                     </button>
-                     -->
-                  </div>
-                  <div class="codeboard-content">
-                     <div class="codeboard-gutter">
-                        1<br />
-                        2<br />
-                        3<br />
-                        4<br />
-                        5<br />
-                        6<br />
-                        7<br />
-                        8<br />
-                        9<br />
-                     </div>
-                     <div class="codeboard-body">
-                        <span class="base-type">using</span> System;<br />
-                        <br />
-                        <div class="block">
-                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
-                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
-                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block">
-                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"He said, <span class="C">\"</span>Hi<span class="C">\"</span>"</span>);
-                                       </span><br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"He said, <span class="C">\"</span>Hi<span class="C">\"</span>"</span>);<br />
                                  </div>
                                  }<br />
                               </div>
@@ -465,13 +394,146 @@
                <p>Результат:</p>
                <div class="consoleboard">
                   He said, "Hi"<br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>
+                  Думаю, тут всё понятно — просто вывели кавычки. Но вы можете задаться вопросом: "А разве недостаточно просто написать кавычки в тексте?" И нет — недостаточно. Дело в том, что кавычки являются частью синтаксиса языка C#, и их лишнее
+                  использование может привести к ошибкам. Например, напишем такой код:
+               </p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">Write</span>(<span class="string-literal">"He said, "</span><span class="wavy-underline">Hi<span class="string-literal">""</span></span
+                                    >);<br />
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>
+                  Как видите, даже до компиляции редактор подсвечивает ошибку красной волнистой линией. Дело в том, что компилятор воспринимает вторую кавычку как конец строки, а после неё стоит слово "Hi" и еще две кавычки, которые нарушают синтаксис
+                  языка C#. Именно поэтому и спользуется <code class="inline-codeboard"><span class="C">\"</span></code
+                  >.
+               </p>
+               <p>Стоит также отметить, что данное действие называется <span class="bold">экранированием</span>, то есть мы дали понять компилятору, что кавычка должна восприниматься просто как символ, а не как часть синтаксиса C#.</p>
+               <p>
+                  Управляющих символов существует гораздо больше, чем мы разобрали в данном блоке, однако чаще всего встречаются именно эти, поэтому нет необходимости разбирать все. Если вам интересно, вы можете самостоятельно найти информацию в
+                  интернете.
+               </p>
+               <p>
+                  Последнее, что мы разберём в этом блоке, — это команда <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">WriteLine</span>()</code>. Она тоже выводит текст на консоль, как и
+                  <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="B">Write</span>()</code>, но в отличии от неё автоматически добавляет в конце текста перенос строки. Например:
+               </p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10<br />
+                        11<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"First line"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Second line"</span>);<br />
+                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Third line"</span>);<br />
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  First line<br />
+                  Second line<br />
+                  Third line<br />
                   <br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
+               <p>
+                  Как видите, и без использования <code class="inline-codeboard"><span class="C">\n</span></code
+                  >, произошёл перенос строки.
+               </p>
                <p>Следующий блок:<br /><a href="c_sharp_module_2.html">Блок 2: Комментарии. Типы данных и переменные. Арифметические операции. Сокращённые записи. Префиксный и постфиксный инкремент и декремент</a></p>
             </section>
          </main>
+         <div class="main-nav">
+            <nav>
+               <ul>
+                  <li>
+                     <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+                  </li>
+                  <!-- <li><a href="index.html"><i class="fa-solid fa-gear"></i></a></li> -->
+               </ul>
+            </nav>
+         </div>
       </div>
    </body>
 </html>

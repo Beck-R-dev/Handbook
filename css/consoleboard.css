@@ -1,8 +1,8 @@
 .consoleboard {
     background: #0C0C0C;
     border-radius: .24rem;
-    color: #dcdcdc;
+    color: #dbdbdb;
     font: .9em "Consolas";
-    padding: 4px 4px 100px;
+    padding: 4px 4px 80px;
     overflow-y: auto;
 }

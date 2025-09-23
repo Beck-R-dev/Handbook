@@ -67,15 +67,13 @@
    padding-left: 10px;
    white-space: nowrap;
 }
-.codeboard .block {
-   position: relative;
-}
-.codeboard .tabbed-block {
+.codeboard .block.tabbed {
    margin-left: 32px;
+}
+.codeboard .block.indent-guides {
    position: relative;
 }
-.codeboard .block::before,
-.codeboard .tabbed-block::before {
+.codeboard .block.indent-guides::before {
    content: "";
    display: block;
    width: 0;
@@ -85,6 +83,21 @@
    
    border-left: 1px dashed rgba(255, 255, 255, .3);
 }
+/* .codeboard .tabbed-block {
+   margin-left: 32px;
+   position: relative;
+} */
+/* .codeboard .block::before,
+.codeboard .tabbed-block::before {
+   content: "";
+   display: block;
+   width: 0;
+   position: absolute;
+   top: 22px;
+   bottom: 22px;
+   
+   border-left: 1px dashed rgba(255, 255, 255, .3);
+} */
 .codeboard .transparent {
    opacity: .64;
 }

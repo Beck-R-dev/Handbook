@@ -45,6 +45,37 @@ body {
    margin: 0 auto;
    padding: 15px;
    max-width: 1120px;
+   margin-bottom: 105px;
+}
+.main-nav {
+   background: #232323;
+   border-radius: 1.3rem;
+   box-shadow: 0 2px 10px 0 rgba(0 0 0 / 23%);
+   padding: 8px 10px;
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+.main-nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+.main-nav ul li {
+   display: inline-block;
+}
+.main-nav ul a {
+   color: #fefefe;
+   display: inline-block;
+   background: rgba(255 255 255 / 10%);
+   border-radius: 1rem;
+   padding: 12px;
+   text-decoration: none;
+   transition: background .12s;
+}
+.main-nav ul a:hover {
+   background: rgba(255 255 255 / 20%);
 }
 p {
    line-height: 1.3em;

@@ -30,8 +30,12 @@
             <hr />
             <h2>Блок 2: Комментарии. Типы данных и переменные. Арифметические операции. Сокращённые записи. Префиксный и постфиксный инкремент и декремент</h2>
             <section>
-               <h3>Комментарции</h3>
-               <p></p>
+               <h3>Комментарии</h3>
+               <p>
+                  <span class="bold">Комментарии</span> — это поясняющий текст в коде, который компилятор игнорирует, и предназначен для разработчиков. Комментарии бывают двух видов: <span class="bold">однострочные</span> и
+                  <span class="bold">многострочные</span>. Разберём сначала однострочные. Чтобы написать такой комментарий, нужно поставить перед ним две косые черты (<code class="inline-codeboard"><span class="comment">//</span></code
+                  >). Например:
+               </p>
                <div class="codeboard">
                   <div class="UI">
                      <!--
@@ -58,13 +62,215 @@
                      <div class="codeboard-body">
                         <span class="base-type">using</span> System;<br />
                         <br />
-                        <div class="block">
+                        <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />
-                           <div class="tabbed-block">
+                           <div class="block tabbed indent-guides">
                               <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
-                              <div class="tabbed-block">
+                              <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
-                                 <div class="tabbed-block"><span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Hello world!"</span>);<br /></div>
+                                 <div class="block tabbed">
+                                    <span class="comment">// Это однострочный комментарий!</span>
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Всё, что идёт в строке после двух косых черт, будет считаться комментарием, даже если это будет часть кода:</p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="comment">// Console.WriteLine("Text");</span>
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>
+                  В данном примере <code class="inline-codeboard"><span class="comment">Console.WriteLine("Text");</span></code> считается комментарием, а не командой, поэтому компилятор будет его игнорировать. В этом можно убедиться, если скомпилировать
+                  и запустить программу:
+               </p>
+               <div class="consoleboard">
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>Как видите, в консоль не вывелся текст "Text".</p>
+               <p>Комментарии можно писать в любом месте кода, кроме случаев, когда из-за этого будет нарушаться синтаксис языка. Пример:</p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <span class="comment">// Тут коммент!</span><br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 { <span class="comment">// И тут тоже!</span><br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed"><span class="comment">// И даже здесь!</span><br /></div>
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed"><span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"Text"</span>); <span class="comment">// Я есть коммент!</span></div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           } <span class="comment">// Чшш... Тут тоже коммент!</span><br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Т.к. комменты игнорируются компилятором, то данная программа просто выведет "Text" на консоль:</p>
+               <div class="consoleboard">
+                  Text<br />
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>Пример выше, это демонстрация того, что комментарии могут быть в любом месте кода, но в реальных программах комментарии не пишутся просто так — они должны пояснять что-то в том участке кода, в котором используются.</p>
+            </section>
+            <section>
+               <h3>Типы данных и переменные</h3>
+               <p>Язык программирования — это инструмент, позволяющий манипулировать данными, и, для того, чтобы мы смогли это сделать нам нужно знать 3 вещи:</p>
+               <ul>
+                  <li>Зачем нужен <span class="bold">тип данных</span></li>
+                  <li>Что такое <span class="bold">переменная</span></li>
+                  <li>Что такое <span class="bold">присваивание</span></li>
+               </ul>
+               <p>
+                  <span class="bold">Тип данных</span> указывает компилятору, как хранить данные в памяти. Дело в том, что компьютер хранит разные данные по-разному: например, целые числа (1, 3, 15, -5 и т.п.) он хранит одним образом, а дробные числа
+                  (1.5, -3.2, 3.33 и т.п.) — другим. Поэтому важно указывать компилятору, какой именно тип данных мы собираемся использовать.
+               </p>
+               <p>Существует много типов данных, но в данном блоке мы разберём 4:</p>
+               <ul>
+                  <li>
+                     <code class="inline-codeboard"><span class="base-type">int</span></code> — целые числа;
+                  </li>
+                  <li>
+                     <code class="inline-codeboard"><span class="base-type">float</span></code> — вещественные числа (дробные);
+                  </li>
+                  <li>
+                     <code class="inline-codeboard"><span class="base-type">double</span></code> — тоже вещественные, но более точные;
+                  </li>
+                  <li>
+                     <code class="inline-codeboard"><span class="base-type">string</span></code> — строки.
+                  </li>
+               </ul>
+               <p>
+                  <span class="bold">Переменная</span> — это имя, с помощью которого мы обращаться к данным в коде. Имя может состоять из латинских букв (a-z, A-Z), цифр (0-9) и символа подчёркивания(_), но не может начинаться с цифры. Также регистр
+                  символов имеет значение: например, имена "Number" и "number" считаются разными переменными, так как первая буква отличается по регистру.
+               </p>
+               <p>
+                  <span class="bold">Присваивание</span> — это операция, которая "прикрепляет" данные к переменной, чтобы мы могли потом обращаться к ней. Для присваивания используется символ <code class="inline-codeboard">=</code>, например, чтобы
+                  присвоить переменной "Number" число 2, нужно написать <code class="inline-codeboard"><span class="variable-name">Number</span> = <span class="numeric-literal">2</span>;</code> (двойка является числовым данным).
+               </p>
+               <p>
+                  А теперь научимся объявлять переменную. Для этого нужно написать тип данных, затем, через пробел, имя переменной: <code class="inline-codeboard"><span class="base-type">int</span> <span class="variable-name">myVariable</span>;</code>
+               </p>
+               <p>Вот целиком пример, где мы объявим переменную, присвоим ей значение, и обратимся к ней:</p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10<br />
+                        11<br />
+                        12<br />
+                        13<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="base-type">int</span> <span class="variable-name">myNum</span>; <span class="comment">// Объявили целочисленную переменную "myNum"</span><br />
+                                    <br />
+                                    <span class="variable-name">myNum</span> = <span class="numeric-literal">2</span>; <span class="comment">// Присвоили переменной значение 2</span><br />
+                                    <br />
+                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="variable-name">myNum</span>); <span class="comment">// Вывели это значение на консоль</span>
+                                 </div>
                                  }<br />
                               </div>
                               }<br />
@@ -76,7 +282,7 @@
                </div>
                <p>Результат:</p>
                <div class="consoleboard">
-                  Hello world!<br />
+                  2<br />
                   <br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .

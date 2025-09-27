@@ -5,4 +5,5 @@
     font: .9em "Consolas";
     padding: 4px 4px 80px;
     overflow-y: auto;
+    word-break: break-all;
 }

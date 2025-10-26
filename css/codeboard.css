@@ -122,6 +122,7 @@
 /* Data type Colors */
 .codeboard .base-type, .inline-codeboard .base-type { color: #6ca0ff; }
 .codeboard .B, .inline-codeboard .B { color: #fce893; }
+.codeboard .statement, .inline-codeboard .statement { color: #df9aff; }
 .codeboard .variable-name, .inline-codeboard .variable-name { color: #89cff0; }
 .codeboard .object-type, .inline-codeboard .object-type { color: #9fe6a8; }
 .codeboard .constant, .inline-codeboard .constant { color: #cba6f7; }

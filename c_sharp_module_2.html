@@ -32,7 +32,7 @@
             <section>
                <h3>Комментарии</h3>
                <p>
-                  <span class="bold">Комментарии</span> — это поясняющий текст в коде, который компилятор игнорирует, и предназначен для разработчиков. Комментарии бывают двух видов: <span class="bold">однострочные</span> и
+                  <span class="bold">Комментарии</span> — это поясняющий текст в коде, который компилятор игнорирует, и предназначен этот текст для разработчиков. Комментарии бывают двух видов: <span class="bold">однострочные</span> и
                   <span class="bold">многострочные</span>. Разберём сначала однострочные. Чтобы написать такой комментарий, нужно поставить перед ним две косые черты (<code class="inline-codeboard"><span class="comment">//</span></code
                   >). Например:
                </p>
@@ -134,7 +134,8 @@
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
-               <p>Как видите, в консоль не вывелся текст "Text".</p>
+               <p>Как видите, в консоль не вывелась надпись "Text".</p>
+               <p>В большинстве редакторов есть горячие клавиши, которые комментируют строку. В Visual Studio это <span class="key">Ctrl</span> + <span class="key">/</span></p>
                <p>Комментарии можно писать в любом месте кода, кроме случаев, когда из-за этого будет нарушаться синтаксис языка. Пример:</p>
                <div class="codeboard">
                   <div class="UI">
@@ -180,14 +181,127 @@
                      </div>
                   </div>
                </div>
-               <p>Т.к. комменты игнорируются компилятором, то данная программа просто выведет "Text" на консоль:</p>
+               <p>Т.к. комментарии игнорируются компилятором, то данная программа просто выведет "Text" на консоль:</p>
                <div class="consoleboard">
                   Text<br />
                   <br />
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
-               <p>Пример выше, это демонстрация того, что комментарии могут быть в любом месте кода, но в реальных программах комментарии не пишутся просто так — они должны пояснять что-то в том участке кода, в котором используются.</p>
+               <div class="orange-block">
+                  <h4>Обращаю внимание,</h4>
+                  <p>что пример выше, это демонстрация того, что комментарии могут быть в любом месте кода, но в реальных программах комментарии не пишутся просто так — они должны что-то пояснять в том участке кода, в котором используются.</p>
+               </div>
+               <p><span class="bold">Многострочные комментарии</span> выполняют ту же функцию, что и однострочные, но могут занимать больше строк:</p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10<br />
+                        11<br />
+                        12<br />
+                        13<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="comment">/*</span><br />
+                                    <span class="comment">Это</span><br />
+                                    <span class="comment">многострочный</span><br />
+                                    <span class="comment">комментарий!</span><br />
+                                    <span class="comment">*/</span>
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>
+                  Как видно из примера выше, чтобы написать такой вид комментариев, нужно использовать символы <code class="inline-codeboard"><span class="comment">/*</span></code> для обозначения начала комментария и
+                  <code class="inline-codeboard"><span class="comment">*/</span></code> — для его конца.
+               </p>
+               <p>Также можно использовать многострочные комментарии таким образом:</p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="object-type">Console</span>.<span class="comment">/* Коммент */</span><span class="span B">WriteLine</span>(<span class="comment">/* Коммент */</span><span class="string-literal">"Hello"</span>);
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  Hello<br />
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>Т.е. всё работает корректно т.к. синтаксис языка не нарушен. Однако на практике такое использование комментариев встречается крайне редко.</p>
             </section>
             <section>
                <h3>Типы данных и переменные</h3>
@@ -201,6 +315,10 @@
                   <span class="bold">Тип данных</span> указывает компилятору, как хранить данные в памяти. Дело в том, что компьютер хранит разные данные по-разному: например, целые числа (1, 3, 15, -5 и т.п.) он хранит одним образом, а дробные числа
                   (1.5, -3.2, 3.33 и т.п.) — другим. Поэтому важно указывать компилятору, какой именно тип данных мы собираемся использовать.
                </p>
+               <div class="orange-block">
+                  <h4>Обращаю внимание,</h4>
+                  <p>Что в данном блоке мы не будем рассматривать, как именно хранятся те или иные данные в памяти, т.к. на данном этапе это будет излишне.</p>
+               </div>
                <p>Существует много типов данных, но в данном блоке мы разберём 4:</p>
                <ul>
                   <li>
@@ -287,6 +405,7 @@
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
+               <p>Ничего сложного</p>
             </section>
          </main>
          <div class="main-nav">

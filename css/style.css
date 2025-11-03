@@ -11,6 +11,30 @@ body {
    background: #eee;
    font: 18px sans-serif;
 }
+.header {
+   background:
+      radial-gradient(
+         circle at 30% top,
+         rgba(230, 247, 255, 0) 0%,
+         rgba(38, 116, 194, 0.8) 50%, rgba(173, 216, 155, 0) 45%),
+   linear-gradient(#2674c2, #0b57b0);
+   color: #efefef;
+   /* background: linear-gradient(180deg,
+    #e6f7ff 0%,
+    #6fc4ff 30%,
+    #2b82d9 65%,
+    #0b57b0 100%); */
+   padding: 30px 15px;
+}
+h1 {
+   margin: 0 0 20px;
+   text-shadow: 0 -1px rgba(0 0 0 / 80%);
+   font-size: 1.4em;
+   text-transform: uppercase;
+}
+h2 {
+   padding: 0 20px;
+}
 .aside-panel {
    background: #232323;
    border-radius: 0.5rem;
@@ -43,9 +67,12 @@ body {
    background: #fff;
    box-shadow: 0 1px 10px rgba(0 0 0 / 30%);
    margin: 0 auto;
-   padding: 15px;
    max-width: 1120px;
    margin-bottom: 105px;
+   padding-bottom: 20px;
+}
+section {
+   padding: 0 20px;
 }
 .main-nav {
    background: #232323;
@@ -85,6 +112,9 @@ p {
 }
 .text-center {
    text-align: center;
+}
+.text-right {
+   text-align: right;
 }
 h4 {
    margin: 0;

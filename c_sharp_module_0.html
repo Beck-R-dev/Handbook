@@ -38,10 +38,7 @@
                   Думаю, такое определение на данный момент вполне отчётливо передаёт главную суть — мы прописываем компьютеру, что и как отображать на экране или что и как вычислять. Однако есть важный нюанс: компьютер не понимает человеческой речи, и,
                   соответственно, на человеческом языке писать команды мы не сможем. А сможем — на языке программирования.
                </p>
-               <p>
-                  Существует много языков программирования: C, C++, C#, Python, JavaScript, Java и т.д. Возможно, о некоторых из них вы слышали или даже изучали. Однако этот курс посвящён разработке игр на Unity, а в Unity используют язык C#.
-                  Соответственно, в этом курсе будет рассматриваться именно C#.
-               </p>
+               <p>Существует много языков программирования: C, C++, C#, Python, JavaScript, Java и т.д. и т.п. и в зависимости от задачи выбирается какой-то из них. Тем не менее, этот курс посвящён программированию на языке C#.</p>
                <p></p>
             </section>
             <section>
@@ -53,15 +50,25 @@
                </p>
                <p>Установка достаточно простая:</p>
                <ol>
-                  <li>Зайти на оффициальный сайт: https://visualstudio.microsoft.com/ru/vs/community/ и нажать кнопочку "Скачать";</li>
-                  <li>Запустить скачанный файл. Он установит на компьютер Visual Studio Installer</li>
-                  <li>В Visual Studio Installer поставить галочки на модули "Разработка классический приложений .NET" и "Разработка игр с помощью Unity"</li>
-                  <li>Нажать кнопочку "Установить", после чего начнётся загрузка самой Visual Studio</li>
+                  <li>Зайти на оффициальный сайт: <a href="https://visualstudio.microsoft.com/ru/vs/community/" target="_blank">visualstudio.microsoft.com/ru/vs/community/</a> и нажать кнопочку "Скачать";</li>
+                  <li>Запустить скачанный файл. Он установит на компьютер Visual Studio Installer;</li>
+                  <li>В Visual Studio Installer поставить галочки на модули "Разработка классический приложений .NET"</li>
+                  <li>Нажать кнопочку "Установить", после чего начнётся загрузка самой Visual Studio.</li>
                </ol>
-               <p>
-                  Далее, в зависимости от версии, может отличаться пользовательский интерфейс, но по суть всегда должна быть возможность создать или открыть проект. Так что создаём новый проект, выбираем "Консольное приложение (.NET Framework)", его
-                  расположение на компьютере и название. Далее откроется файл, в котором будет написано что-то такое:
-               </p>
+               <p>Всё! Далее, чтобы уже начать писать код на C#, нужно открыть Visual Studio. В зависимости от версии, может отличаться пользовательский интерфейс, но всегда должна быть возможность создать или открыть проект:</p>
+               <img src="img/visual_studio_screen_001.png" alt="VS_screen_001" />
+               <p>На скриншоте видно, что справа есть кнопки для создания нового проекта "Create a new project". Это именно то, что нам нужно — кликаем. Далее будет окно, где нужно выбрать тип проекта:</p>
+               <img src="img/visual_studio_screen_002.png" alt="VS_screen_002" />
+               <p>Среди всех этих типов нас уинтересует только консольное приложение (.NET Framework), поэтому пишем в поисковую строку ".Ne":</p>
+               <img src="img/visual_studio_screen_003.png" alt="VS_screen_003" />
+               <div class="orange-block">
+                  <h4>Обращаю внимание,</h4>
+                  <p>что нам нужен именно тот вариант, где в скобках написано ".NET Framework" и чуть ниже C# (Не Visual Basic)</p>
+               </div>
+               <p>Выбираем нужный вариант, жмём кнопку "Next". Дальше выходит окно со стандартными конфигурациями проекта: название проекта, расположение, название решения:</p>
+               <img src="img/visual_studio_screen_004.png" alt="VS_screen_004" />
+               <p>Пока не обращайте внимание на "название решения", оно будет иметь такое же название, которое вы укажите в поле имени проекта. Заполните только поля названия проекта и расположение как вам будет удобно. А я оставлю ConsoleApp1.</p>
+               <p>После этого уже откроется сам редактор с открытой вкладкой "Program.cs", в ктором будет что-то такое:</p>
                <div class="codeboard">
                   <div class="UI">
                      <!--
@@ -89,11 +96,13 @@
                         12<br />
                      </div>
                      <div class="codeboard-body">
-                        <span class="base-type">using</span> System;<br />
-                        <span class="base-type">using</span> System.Collections.Generic;<br />
-                        <span class="base-type">using</span> System.Linq;<br />
-                        <span class="base-type">using</span> System.Text;<br />
-                        <span class="base-type">using</span> System.Threading.Tasks;<br />
+                        <div class="transparent">
+                           <span class="base-type">using</span> System;<br />
+                           <span class="base-type">using</span> System.Collections.Generic;<br />
+                           <span class="base-type">using</span> System.Linq;<br />
+                           <span class="base-type">using</span> System.Text;<br />
+                           <span class="base-type">using</span> System.Threading.Tasks;<br />
+                        </div>
                         <br />
                         <div class="block indent-guides">
                            <span class="base-type">namespace</span> ConsoleApp1 {<br />

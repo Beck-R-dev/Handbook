@@ -11,6 +11,10 @@ body {
    background: #eee;
    font: 18px sans-serif;
 }
+img {
+   max-width: 100%;
+   height: auto;
+}
 .header {
    background:
       radial-gradient(

@@ -32,7 +32,16 @@
             </header>
             <h2>Блок 3: Конструкции ветвления: if/else и switch</h2>
             <section>
-               <p>В этом разделе мы пройдём конструкцию условия. Как понятно из названия, суть в том, что мы будет описывать некое условие, и, если это условие выполнено, то мы пойдём по одному пути, иначе — по другому пути.</p>
+               <p>
+                  В этом разделе мы пройдём <span class="bold">конструкции ветвления</span>. Как можно понять из названия, они позволяют разветвлить код на несколько вариантов. Существуют две конструкции ветвления: конструкция условия (if/else) и
+                  конструкция переключения (switch).
+               </p>
+               <h3>Конструкция условия</h3>
+               <p>
+                  Чтобы воспользоваться конструкцией условия, нужно написать ключевое слово <code class="inline-codeboard"><span class="statement">if</span></code
+                  >, затем, в скобках, выражение, в результате которого будет либо истина, либо ложь, и потом фигурные скобки, внутри которых можно будет писать любой код, например,
+                  <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="span B">WriteLine</span>(<span class="string-literal">"Yes"</span>)</code>:
+               </p>
                <div class="codeboard">
                   <div class="UI">
                      <!--
@@ -70,9 +79,13 @@
                               <div class="block tabbed indent-guides">
                                  <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
                                  <div class="block tabbed">
-                                    <span class="statement">if</span> (<span class="variable-name">n</span> == <span class="numeric-literal">0</span>) {<br />
+                                    <span class="base-type">int</span> <span class="variable-name">n</span> = <span class="numeric-literal">2</span>;<br />
                                     <br />
-                                    }
+                                    <div class="block indent-guides">
+                                       <span class="statement">if</span> (<span class="variable-name">n</span> < <span class="numeric-literal">5</span>) {<br />
+                                       <div class="block tabbed"><span class="object-type">Console</span>.<span class="span B">WriteLine</span>(<span class="string-literal">"Yes"</span>);<br /></div>
+                                       }
+                                    </div>
                                  </div>
                                  }<br />
                               </div>
@@ -82,6 +95,13 @@
                         </div>
                      </div>
                   </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  Yes<br />
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
                </div>
                1. В мануале написать про лайфхак else if {}<br />
                2. Где-нубудь написать список популярных игр, сделанных на Unity<br />

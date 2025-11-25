@@ -35,8 +35,45 @@ h2 {
    padding: 0 20px;
 }
 h3 {
-   color: #002c5f;
+   /* color: #002c5f; */
+   color: #efefef;
+   background:
+      radial-gradient(
+         circle at 30% top,
+         rgba(255, 255, 255, 0) 0%,
+         rgba(255, 255, 255, 0.06) 50%,
+         rgba(255, 255, 255, 0) 45%
+      ),
+      linear-gradient(
+         #1b528a,
+         #073c79
+      )
+   ;
    font-size: 1.2em;
+   width: fit-content;
+   padding: 10px 20px;
+   position: relative;
+   transform: translate(-20px);
+}
+h3::after {
+   content: "f";
+   color: transparent;
+   /* background:
+      linear-gradient(95deg, red 50%, transparent 50%),
+      linear-gradient(-95deg, red 50%, transparent 50%)
+   ; */
+   background: linear-gradient(#1b528a, #073c79);
+   clip-path: polygon(0% 0%, 100% 0%, 0% 50%, 100% 100%, 0% 100%);
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   display: inline-block;
+   padding-top: inherit;
+   padding-bottom: inherit;
+   position: absolute;
+   width: 25px;
+   right: -24px;
+   height: inherit;
+   top: 0;
 }
 ul li {
    line-height: 1.24em;

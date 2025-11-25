@@ -38,6 +38,9 @@ h3 {
    color: #002c5f;
    font-size: 1.2em;
 }
+ul li {
+   line-height: 1.24em;
+}
 .aside-panel {
    background: #232323;
    border-radius: 0.5rem;

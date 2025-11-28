@@ -325,28 +325,28 @@
                   <h4>Обращаю внимание,</h4>
                   <p>Что в данном блоке мы не будем рассматривать, как именно хранятся те или иные данные в памяти, т.к. на данном этапе это будет излишне.</p>
                </div>
-               <p>Существует много типов данных, но в данном блоке мы разберём 4:</p>
+               <p>Существует не мало различный типов данных, но в данном блоке мы разберём 4 из них:</p>
                <ul>
                   <li>
-                     <code class="inline-codeboard"><span class="base-type">int</span></code> — целые числа;
+                     <code class="inline-codeboard"><span class="base-type">int</span></code> — для целых чисел;
                   </li>
                   <li>
-                     <code class="inline-codeboard"><span class="base-type">float</span></code> — вещественные числа (дробные);
+                     <code class="inline-codeboard"><span class="base-type">float</span></code> — для вещественных чисел (дробных). Еще еще называют числа с плавающей запятой;
                   </li>
                   <li>
-                     <code class="inline-codeboard"><span class="base-type">double</span></code> — тоже вещественные, но более точные;
+                     <code class="inline-codeboard"><span class="base-type">double</span></code> — тоже для вещественных чисел, но с двойной точностью (после запятой в 2 раза больше цифр);
                   </li>
                   <li>
-                     <code class="inline-codeboard"><span class="base-type">string</span></code> — строки.
+                     <code class="inline-codeboard"><span class="base-type">string</span></code> — для строк.
                   </li>
                </ul>
                <p>
-                  <span class="bold">Переменная</span> — это имя, с помощью которого мы обращаться к данным в коде. Имя может состоять из латинских букв (a-z, A-Z), цифр (0-9) и символа подчёркивания(_), но не может начинаться с цифры. Также регистр
-                  символов имеет значение: например, имена "Number" и "number" считаются разными переменными, так как первая буква отличается по регистру.
+                  <span class="bold">Переменная</span> (variable) — это имя, с помощью которого мы обращаемся к данным в коде. Имя может состоять из латинских букв (a-z, A-Z), цифр (0-9) и символа подчёркивания (_), но не может начинаться с цифры. Также
+                  регистр символов имеет значение: например, имена "Number" и "number" будут считаться разными переменными, так как первая буква отличается по регистру.
                </p>
                <p>
-                  <span class="bold">Присваивание</span> — это операция, которая "прикрепляет" данные к переменной, чтобы мы могли потом обращаться к ней. Для присваивания используется символ <code class="inline-codeboard">=</code>, например, чтобы
-                  присвоить переменной "Number" число 2, нужно написать <code class="inline-codeboard"><span class="variable-name">Number</span> = <span class="numeric-literal">2</span>;</code> (двойка является числовым данным).
+                  <span class="bold">Присваивание</span> (assignment) — это операция, которая "прикрепляет" данные к переменной, чтобы мы могли потом обращаться к ней. Для присваивания используется символ <code class="inline-codeboard">=</code>,
+                  например, чтобы присвоить переменной "Number" число 2, нужно написать <code class="inline-codeboard"><span class="variable-name">Number</span> = <span class="numeric-literal">2</span>;</code> (двойка является числовым данным).
                </p>
                <p>
                   А теперь научимся объявлять переменную. Для этого нужно написать тип данных, затем, через пробел, имя переменной: <code class="inline-codeboard"><span class="base-type">int</span> <span class="variable-name">myVariable</span>;</code>
@@ -411,7 +411,71 @@
                   *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
                   Press any key to close this window . . .
                </div>
-               <p>Ничего сложного</p>
+               <p>
+                  Обратите внимание, при использовании <code class="inline-codeboard"><span class="object-type">Console</span>.<span class="span B">WriteLine</span>()</code> в скобках не использовались кавычки. Это сделанно специально, т.к. в кавычках мы
+                  пишем только текст, а не переменные. Если мы всё же напишем переменную в кавычках, то это будет восприниматься просто как текст "myNum":
+               </p>
+               <div class="codeboard">
+                  <div class="UI">
+                     <!--
+                     <button class="btn-copy">
+                        <i class="fa-solid fa-copy"></i>
+                     </button>
+                     <button class="btn-settings">
+                        <i class="fa-solid fa-gear"></i>
+                     </button>
+                     -->
+                  </div>
+                  <div class="codeboard-content">
+                     <div class="codeboard-gutter">
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5<br />
+                        6<br />
+                        7<br />
+                        8<br />
+                        9<br />
+                        10<br />
+                        11<br />
+                        12<br />
+                        13<br />
+                     </div>
+                     <div class="codeboard-body">
+                        <span class="base-type">using</span> System;<br />
+                        <br />
+                        <div class="block indent-guides">
+                           <span class="base-type">namespace</span> ConsoleApp1 {<br />
+                           <div class="block tabbed indent-guides">
+                              <span class="base-type">internal class</span> <span class="object-type">Program</span> {<br />
+                              <div class="block tabbed indent-guides">
+                                 <span class="base-type">static void</span> <span class="B">Main</span>(<span class="base-type">string</span>[] args) {<br />
+                                 <div class="block tabbed">
+                                    <span class="base-type">int</span> <span class="variable-name">myNum</span>; <span class="comment">// Объявили целочисленную переменную "myNum"</span><br />
+                                    <br />
+                                    <span class="variable-name">myNum</span> = <span class="numeric-literal">2</span>; <span class="comment">// Присвоили переменной значение 2</span><br />
+                                    <br />
+                                    <span class="object-type">Console</span>.<span class="B">WriteLine</span>(<span class="string-literal">"myNum"</span>); <span class="comment">// Вывели не значение переменной, а просто текст "myNum"</span>
+                                 </div>
+                                 }<br />
+                              </div>
+                              }<br />
+                           </div>
+                           }<br />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <p>Результат:</p>
+               <div class="consoleboard">
+                  myNum<br />
+                  <br />
+                  *path*\ConsoleApp1\ConsoleApp1\bin\Debug\CondoleApp1.exe (process *number*) exited with code 0 (0x0).<br />
+                  Press any key to close this window . . .
+               </div>
+               <p>Поэтому будьте внимательны и не путайте строки с переменными.</p>
+               <p>Использование переменной в коде называется обращением к переменной (variable access)</p>
             </section>
          </main>
          <div class="main-nav">
